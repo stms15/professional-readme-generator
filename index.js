@@ -10,6 +10,7 @@ const questions = [
   "Describe your project.",
   "Enter installation instructions for your project.",
   "How does someone use your project? Please include details",
+  "Choose a license from the following list for your project. If no license, hit enter/return an empty string.\n\nGNU AGPLv3\nGNU GPLv3\nGNU LGPLv3\nMozilla Public License 2.0\nApache License 2.0\nMIT License\nBoost Software License 1.0",
   "Are there any contribution guidelines for your project? Hit enter/return an empty string if no.",
   "How can your project be tested?",
 ];
@@ -18,6 +19,7 @@ const questionNames = [
   "description",
   "installation",
   "usage",
+  "license",
   "contribution",
   "tests",
 ];
@@ -62,6 +64,11 @@ function init() {
         type: "input",
         message: questions[5],
         name: questionNames[5],
+      },
+      {
+        type: "input",
+        message: questions[6],
+        name: questionNames[6],
       },
     ])
     .then((response) => {

@@ -1,8 +1,10 @@
-# title test
+# title
+
+[![MIT License badge](https://img.shields.io/badge/License-MIT_License-lightblue)](https://spdx.org/licenses/MIT.html)
 
   ## Description
 
-  description
+description
 
   ## Table of Contents
 
@@ -10,23 +12,23 @@
   - [Usage](#usage)
   - [Credits](#credits)
   - [License](#license)
-
+  
   ## Installation
 
-  install
-
+install
+  
   ## Usage
 
-  usage test
+usage
 
-  ## License
+## License
 
-  ---
+The license for this application is MIT License. For more information about this license, click the badge or go to this link: https://spdx.org/licenses/MIT.html
 
-  ## Contribution Guidelines
+---
 
-  guidelines
 
-  ## Tests
 
-  tests
+## Tests
+
+tests
