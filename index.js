@@ -1,18 +1,30 @@
-// TODO: Include packages needed for this application
+// Include packages needed for this application
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 const fs = require("fs");
 require("./utils/generateMarkdown");
 
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const questions = [
-  "What is the title of your project?",
-  "Describe your project.",
-  "Enter installation instructions for your project.",
-  "How does someone use your project? Please include details",
-  "Choose a license from the following list for your project. If no license, hit enter/return an empty string.\n\nGNU AGPLv3\nGNU GPLv3\nGNU LGPLv3\nMozilla Public License 2.0\nApache License 2.0\nMIT License\nBoost Software License 1.0",
-  "Are there any contribution guidelines for your project? Hit enter/return an empty string if no.",
-  "How can your project be tested?",
+  "What is the title of your project?\n",
+  "Describe your project.\n",
+  "Enter installation instructions for your project.\n",
+  "How does someone use your project? Please include details.\n",
+  "Choose a license from the following list for your project. If no license, select the empty string.",
+  "Are there any contribution guidelines for your project? Hit enter/return an empty string if no.\n",
+  "How can your project be tested?\n",
+  "What is your GitHub username?\n",
+  "What is your email address?\n",
+];
+const licenseOptions = [
+  "GNU AGPLv3",
+  "GNU GPLv3",
+  "GNU LGPLv3",
+  "Mozilla Public License 2.0",
+  "Apache License 2.0",
+  "MIT License",
+  "Boost Software License 1.0",
+  "",
 ];
 const questionNames = [
   "title",
@@ -22,16 +34,18 @@ const questionNames = [
   "license",
   "contribution",
   "tests",
+  "username",
+  "email",
 ];
 
-// TODO: Create a function to write README file
+// Create a function to write README file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (error) => {
     error ? console.log(error) : console.log("Success");
   });
 }
 
-// TODO: Create a function to initialize app
+// Create a function to initialize app
 function init() {
   inquirer
     .prompt([
@@ -56,8 +70,9 @@ function init() {
         name: questionNames[3],
       },
       {
-        type: "input",
+        type: "list",
         message: questions[4],
+        choices: licenseOptions,
         name: questionNames[4],
       },
       {
@@ -66,15 +81,25 @@ function init() {
         name: questionNames[5],
       },
       {
-        type: "input",
+        type: "editor",
         message: questions[6],
         name: questionNames[6],
+      },
+      {
+        type: "input",
+        message: questions[7],
+        name: questionNames[7],
+      },
+      {
+        type: "input",
+        message: questions[8],
+        name: questionNames[8],
       },
     ])
     .then((response) => {
       const markdown = generateMarkdown(response);
 
-      writeToFile("generated-README.md", markdown);
+      writeToFile("./results/README.md", markdown);
     });
 }
 
