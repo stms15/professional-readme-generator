@@ -71,7 +71,7 @@ You can then find the resulting "README.md" file in the "results" folder.
 
 !["README.md" file in the "results" folder in the directory](./assets/imgs/ProfessionalReadmeGenerator-ReadmeLocation.png)
 
-For a complete video tutorial on how to run this application and properly answer the prompts, please reference https://drive.google.com/file/d/1Y6dg8q3Mcm7jMeNizj7Pb8_7QUrRlh6X/view?usp=drive_link.
+For a complete video tutorial on how to run this application and properly answer the prompts, please reference https://drive.google.com/file/d/1Y6dg8q3Mcm7jMeNizj7Pb8_7QUrRlh6X/view?usp=drive_link. See also a sample generated README in the "results" folder.
 
 ## Credits
 
